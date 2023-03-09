@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "reddit_interview",
+    "slug": "reddit_interview",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
