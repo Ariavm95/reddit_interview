@@ -31,7 +31,7 @@ if ENV['NO_FLIPPER'] == '1' then
 elsif podfile_properties.key?('ios.flipper') then
   # Configure Flipper in Podfile.properties.json
   if podfile_properties['ios.flipper'] == 'true' then
-    flipper_config = FlipperConfiguration.enabled(["Debug", "Release"])
+    flipper_config = FlipperConfiguration.enabled(["Debug"])
   elsif podfile_properties['ios.flipper'] != 'false' then
     flipper_config = FlipperConfiguration.enabled(["Debug", "Release"], { 'Flipper' => podfile_properties['ios.flipper'] })
   end
@@ -54,7 +54,7 @@ target 'redditinterview' do
     # An absolute path to your application root.
     :app_path => "#{Pod::Config.instance.installation_root}/..",
     # Note that if you have use_frameworks! enabled, Flipper will not work if enabled
-    :flipper_configuration => flipper_config
+    :flipper_configuration => FlipperConfiguration.enabled(["Debug"], { 'Flipper' => '0.182.0' })
   )
 
   post_install do |installer|
