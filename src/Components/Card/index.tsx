@@ -1,18 +1,18 @@
 import * as React from "react";
 import {
-	Modal,
 	Text,
 	View,
 	StyleSheet,
 	useWindowDimensions,
 	Pressable,
-	SafeAreaView,
 } from "react-native";
 import { Image } from "expo-image";
 import OctiIcon from "@expo/vector-icons/Octicons";
-import { useState } from "react";
 import { differenceInHours } from "date-fns";
+import { useState } from "react";
+
 import PostWebModal from "../Modals/PostWebModal";
+import { roundNumberString } from "../../util/roundNumberString";
 
 export type CardProps = {
 	imageData: {
@@ -117,14 +117,6 @@ const Card = ({
 };
 
 export default Card;
-
-function roundNumberString(score: number) {
-	if (!score) return 0;
-	if (score < 1e3) return score.toString();
-	if (score < 3e4) return `${(score / 1e3).toFixed(1)}k`;
-	if (score < 1e6) return `${Math.round(score / 1e3)}k`;
-	return Math.round(score / 1e6);
-}
 
 const styles = StyleSheet.create({
 	container: {

@@ -8,6 +8,7 @@ import React, {
 import { FlatList, StyleSheet, View } from "react-native";
 import DropDownPicker from "react-native-dropdown-picker";
 import { useQuery } from "@tanstack/react-query";
+
 import Card, { CardProps } from "../../Components/Card";
 import { getFormattedListing, SubreditType } from "../../data/apis/listingApi";
 

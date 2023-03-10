@@ -33,12 +33,12 @@ const PostWebModal = ({ onclose, isModalVisible, uri }: PostWebModalProps) => {
 			visible={isModalVisible}
 			presentationStyle="formSheet"
 		>
-			<View style={{ flex: 1, backgroundColor: "black" }}>
+			<View style={styles.container}>
 				<Pressable
 					onPress={(_) => {
 						onclose();
 					}}
-					style={{ margin: 10, alignSelf: "flex-end" }}
+					style={styles.exitBtn}
 				>
 					<AntDesign name="close" size={28} color="white" />
 				</Pressable>
@@ -49,6 +49,7 @@ const PostWebModal = ({ onclose, isModalVisible, uri }: PostWebModalProps) => {
 					source={{ uri }}
 					renderLoading={() => <Spinner />}
 					startInLoadingState
+					forceDarkOn
 				/>
 			</View>
 		</Modal>
@@ -58,5 +59,6 @@ const PostWebModal = ({ onclose, isModalVisible, uri }: PostWebModalProps) => {
 export default PostWebModal;
 
 const styles = StyleSheet.create({
-	container: {},
+	container: { flex: 1, backgroundColor: "black" },
+	exitBtn: { margin: 10, alignSelf: "flex-end" },
 });
