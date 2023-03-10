@@ -6,36 +6,22 @@ import React, {
 	useMemo,
 } from "react";
 import { FlatList, StyleSheet, View } from "react-native";
-import DropDownPicker from "react-native-dropdown-picker";
 import { useQuery } from "@tanstack/react-query";
 
 import Card, { CardProps } from "../../Components/Card";
 import { getFormattedListing, SubreditType } from "../../data/apis/listingApi";
-
-const usePrevious = (value: any) => {
-	const ref = useRef();
-	useEffect(() => {
-		ref.current = value;
-	});
-	return ref.current;
-};
+import usePrevious from "../../hooks/usePrevious";
+import TypePicker from "./components/TypePicker";
 
 const componentName = () => {
 	const [afterName, setAfterName] = useState(undefined);
 	const [loadedLinks, setLoadedLinks] = useState<CardProps[]>([]);
-	const afterNameList = useRef<string[]>([]);
+	// const afterNameList = useRef<string[]>([]);
 	const listRef = useRef<FlatList<any> | null>(null);
 
-	const [open, setOpen] = useState(false);
 	const [value, setValue] = useState<SubreditType>("hot");
 	const previousValue = usePrevious(value);
 	const shoudlMergeResult = useRef(false);
-	const [items, setItems] = useState<
-		Array<{ label: string; value: SubreditType }>
-	>([
-		{ label: "Hot", value: "hot" },
-		{ label: "Top", value: "top" },
-	]);
 
 	// Using react query to call api function
 	const query = useQuery({
@@ -133,22 +119,7 @@ const componentName = () => {
 					marginHorizontal: 20,
 				}}
 			>
-				<DropDownPicker
-					open={open}
-					value={value}
-					items={items}
-					setOpen={setOpen}
-					setValue={setValue}
-					setItems={setItems}
-					zIndex={10000}
-					style={styles.dropboxStyle}
-					containerStyle={styles.dropboxContainer}
-					listParentContainerStyle={{ backgroundColor: "#333" }}
-					theme="DARK"
-					selectedItemContainerStyle={{
-						backgroundColor: "#222",
-					}}
-				/>
+				<TypePicker value={value} setValue={setValue} />
 			</View>
 			{LinksListComponent}
 		</View>
