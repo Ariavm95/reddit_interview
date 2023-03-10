@@ -8,7 +8,7 @@ import React, {
 import { FlatList, StyleSheet, View } from "react-native";
 import { useQuery } from "@tanstack/react-query";
 
-import Card, { CardProps } from "../../Components/Card";
+import Card, { CardProps } from "../../components/Card";
 import { getFormattedListing, SubreditType } from "../../data/apis/listingApi";
 import usePrevious from "../../hooks/usePrevious";
 import TypePicker from "./components/TypePicker";

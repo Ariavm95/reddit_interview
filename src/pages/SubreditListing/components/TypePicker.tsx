@@ -1,9 +1,8 @@
 import * as React from "react";
-import { useRef, useState } from "react";
-import { Text, View, StyleSheet } from "react-native";
+import { useState } from "react";
+import { StyleSheet } from "react-native";
 import DropDownPicker from "react-native-dropdown-picker";
 import { SubreditType } from "../../../data/apis/listingApi";
-import usePrevious from "../../../hooks/usePrevious";
 
 interface TypePickerProps {
 	value: SubreditType;
@@ -19,8 +18,6 @@ const picketData: PickeDataType = [
 
 const TypePicker = ({ value, setValue }: TypePickerProps) => {
 	const [open, setOpen] = useState(false);
-	const previousValue = usePrevious(value);
-	const shoudlMergeResult = useRef(false);
 	const [items, setItems] = useState<PickeDataType>(picketData);
 
 	return (

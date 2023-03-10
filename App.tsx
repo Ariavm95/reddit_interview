@@ -8,7 +8,7 @@ import {
 	QueryClient,
 	QueryClientProvider,
 } from "@tanstack/react-query";
-import SubreditListing from "./src/Pages/SubreditListing";
+import SubreditListing from "./src/pages/SubreditListing";
 import "./src/util/axiosBaseConfigs";
 
 // Create a client
@@ -18,7 +18,7 @@ export default function App() {
 	return (
 		<QueryClientProvider client={queryClient}>
 			<StatusBar style="light" />
-			<SafeAreaView style={{ flex: 1, backgroundColor: "black" }}>
+			<SafeAreaView style={styles.container}>
 				<SubreditListing />
 			</SafeAreaView>
 		</QueryClientProvider>
@@ -28,8 +28,6 @@ export default function App() {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: "#fff",
-		alignItems: "center",
-		justifyContent: "center",
+		backgroundColor: "black",
 	},
 });

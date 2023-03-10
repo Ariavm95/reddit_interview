@@ -1,6 +1,5 @@
 # Reddit App Interview
 
-
 This project mainly started for an interview, and I tried to keep it as simnple as possible to avoid confusion.
 
 ## Prerequisites
@@ -17,6 +16,22 @@ This project mainly started for an interview, and I tried to keep it as simnple 
 - [axios](https://github.com/axios/axios) for networking.
 - [react query](https://tanstack.com/query/v4/docs/react/overview) for data-fetching.
 
+## Note
+
+Note that you need to create a `.env` file in the project directory and add `API_BASE=https://api.reddit.com` to make it work.
+
 ## Usage
 
 This is just simple app to show sub reddit posts, but some functionalities are not feasible because the endpoint are not completely public.
+
+# Folder STructure
+
+-`src`: This folder is the main container of all the code inside your application.
+
+-`components`: Folder to store any common component that you use through your app.
+
+-`pages`: Folder that contains all your application screens/features.
+
+-`App.tsx`: Main component that starts your whole app.
+
+-`index.js`: Entry point of your application as per React-Native standards.
