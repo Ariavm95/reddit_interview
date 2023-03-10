@@ -20,6 +20,13 @@ This project mainly started for an interview, and I tried to keep it as simnple 
 
 Note that you need to create a `.env` file in the project directory and add `API_BASE=https://api.reddit.com` to make it work.
 
+## Run
+
+Go to your project's root folder and run `yarn`.
+run `npx pod-install`
+run `yarn start`
+Run the app by opening the ios and folder in xcode and Android sStudio. OR run `yarn ios` or `yarn android` to start your application!
+
 ## Usage
 
 This is just simple app to show sub reddit posts, but some functionalities are not feasible because the endpoint are not completely public.
