@@ -1,5 +1,7 @@
 import axios, { AxiosRequestConfig } from "axios";
+
 export type SubreditType = "hot" | "new" | "random" | "top";
+
 export const getListing = (type: SubreditType, after?: string) => {
 	const axiosReq: AxiosRequestConfig = {
 		method: "GET",

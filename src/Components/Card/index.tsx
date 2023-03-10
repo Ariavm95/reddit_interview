@@ -12,7 +12,7 @@ import { Image } from "expo-image";
 import OctiIcon from "@expo/vector-icons/Octicons";
 import { useState } from "react";
 import { differenceInHours } from "date-fns";
-import PostWebModal from "./Modals/PostWebModal";
+import PostWebModal from "../Modals/PostWebModal";
 
 export type CardProps = {
 	imageData: {
