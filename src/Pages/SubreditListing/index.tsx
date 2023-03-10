@@ -36,7 +36,7 @@ const componentName = () => {
 		{ label: "Top", value: "top" },
 	]);
 
-	// Queries
+	// Using react query to call api function
 	const query = useQuery({
 		queryKey: [afterName, value],
 		queryFn: () => {
@@ -115,6 +115,10 @@ const componentName = () => {
 				style={{ zIndex: -1 }}
 				contentContainerStyle={{ backgroundColor: "black" }}
 				extraData={value}
+				refreshing={query.isRefetching}
+				onRefresh={() => {
+					query.refetch();
+				}}
 			/>
 		),
 		[value, loadMore, loadedLinks]
@@ -136,11 +140,8 @@ const componentName = () => {
 					setValue={setValue}
 					setItems={setItems}
 					zIndex={10000}
-					style={{ alignSelf: "center", backgroundColor: "#333" }}
-					containerStyle={{
-						backgroundColor: "#333",
-						borderRadius: 10,
-					}}
+					style={styles.dropboxStyle}
+					containerStyle={styles.dropboxContainer}
 					listParentContainerStyle={{ backgroundColor: "#333" }}
 					theme="DARK"
 					selectedItemContainerStyle={{
@@ -158,5 +159,13 @@ export default componentName;
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
+	},
+	dropboxStyle: {
+		alignSelf: "center",
+		backgroundColor: "#333",
+	},
+	dropboxContainer: {
+		backgroundColor: "#333",
+		borderRadius: 10,
 	},
 });

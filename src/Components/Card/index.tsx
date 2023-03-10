@@ -76,12 +76,10 @@ const Card = ({
 			</View>
 			<Image
 				style={[
+					styles.image,
 					{
 						width: desiredImgWidth,
 						height: desireImgHeight,
-						borderRadius: 10,
-						overflow: "hidden",
-						alignSelf: "center",
 					},
 				]}
 				source={imageData.url}
@@ -97,13 +95,15 @@ const Card = ({
 			>
 				<View style={{ flexDirection: "row" }}>
 					<OctiIcon name="thumbsup" size={16} color="white" />
-					<Text style={[styles.text, { marginHorizontal: 10 }]}>{score}</Text>
+					<Text style={[styles.text, { marginHorizontal: 10 }]}>
+						{roundNumberString(score)}
+					</Text>
 					<OctiIcon name="thumbsdown" size={16} color="white" />
 				</View>
 				<View style={{ flexDirection: "row" }}>
 					<OctiIcon name="comment" size={16} color="white" />
 					<Text style={[styles.text, { marginHorizontal: 10 }]}>
-						{numComments}
+						{roundNumberString(numComments)}
 					</Text>
 				</View>
 			</View>
@@ -118,6 +118,14 @@ const Card = ({
 
 export default Card;
 
+function roundNumberString(score: number) {
+	if (!score) return 0;
+	if (score < 1e3) return score.toString();
+	if (score < 3e4) return `${(score / 1e3).toFixed(1)}k`;
+	if (score < 1e6) return `${Math.round(score / 1e3)}k`;
+	return Math.round(score / 1e6);
+}
+
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
@@ -126,6 +134,11 @@ const styles = StyleSheet.create({
 		alignSelf: "center",
 		paddingVertical: 15,
 		borderRadius: 2,
+	},
+	image: {
+		borderRadius: 10,
+		overflow: "hidden",
+		alignSelf: "center",
 	},
 	text: {
 		color: "white",
