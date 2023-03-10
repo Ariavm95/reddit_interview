@@ -13,7 +13,7 @@ import { getFormattedListing, SubreditType } from "../../data/apis/listingApi";
 import usePrevious from "../../hooks/usePrevious";
 import TypePicker from "./components/TypePicker";
 
-const componentName = () => {
+const SubreditListing = () => {
 	const [afterName, setAfterName] = useState(undefined);
 	const [loadedLinks, setLoadedLinks] = useState<CardProps[]>([]);
 	// const afterNameList = useRef<string[]>([]);
@@ -126,7 +126,7 @@ const componentName = () => {
 	);
 };
 
-export default componentName;
+export default SubreditListing;
 
 const styles = StyleSheet.create({
 	container: {
