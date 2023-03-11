@@ -32,9 +32,9 @@ Note that you need to create a `.env` file in the project directory and add `API
 
 ## Usage
 
-This is just simple app to show sub reddit posts, but some functionalities are not feasible because the endpoint are not completely public.
+This is just simple app to show sub reddit posts, but some functionalities are not feasible because the endpoints are not completely public.
 
-# Folder STructure
+# Folder Structure
 
 -`src`: This folder is the main container of all the code inside your application.
 
