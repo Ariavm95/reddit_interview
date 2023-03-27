@@ -1,6 +1,6 @@
 # Reddit App Interview
 
-This project mainly started for an interview, and I tried to keep it as simnple as possible to avoid confusion.
+This project mainly started for an interview, and I tried to keep it as simnple as possible to avoid confusion. The given time to code this was less than 1 day
 
 ## Prerequisites
 
